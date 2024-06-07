@@ -1,14 +1,337 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
 
+/* Creacion de Variables */
+:root {
+	/* Colores */
+	--fondo: #242430;
+	--blanco: #feffff;
+	--morado: #7270ec;
+	--moradoSecundario: #6c69f9;
+	--gris: #747474;
+	--grisSecundario: #747b8f;
+	--grisTerciario: #4e4b5076;
+	--grisCuaternario: #7a7b8f16;
+
+	/* Fuentes */
+	--fuentePrincipal: "Poppins", sans-serif;
+}
+/* Resetamos todo el Css para mejor control del mismo */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    text-decoration: none;
-    list-style: none;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	text-decoration: none;
+	list-style: none;
 }
 
 body {
-    background-color: #242430;
-    font-family: 'Poppins', sans-serif;
+	background-color: var(--fondo);
+	font-family: var(--fuentePrincipal);
 }
+/* DESKTOP FRIST */
+
+/* Estilos General */
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+.header {
+	display: flex;
+	align-items: center;
+	min-height: 70vh;
+}
+
+hr {
+	border: 1px solid var(--grisCuaternario);
+}
+/* swipers */
+.swiper-slide {
+	padding: 0 80px 50px 80px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+	font-size: 25px;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+	color: var(--blanco);
+}
+
+.swiper-pagination-bullet {
+	background-color: var(--gris);
+	opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+	background-color: var(--morado);
+}
+/* Fin swipers */
+
+/* Precios */
+.prices {
+	display: flex;
+	margin: 20px 0;
+}
+.price-1,
+.price-2 {
+	font-size: 30px;
+}
+.price-1 {
+	color: var(--grisSecundario);
+	text-decoration-line: line-through;
+	margin-right: 25px;
+}
+
+.price-2 {
+	color: var(--morado);
+}
+.precio {
+	color: var(--morado) !important;
+}
+/* fin precios */
+
+/* Botones */
+.btn-1,
+.btn-3 {
+	display: inline-block;
+	padding: 10px 25px;
+	color: var(--blanco);
+	border-radius: 25px;
+}
+.btn-1 {
+	background-color: var(--morado);
+	font-size: 16px;
+	margin-top: 40px;
+}
+
+.btn-1:hover,
+.btn-3:hover {
+	background-color: var(--moradoSecundario);
+}
+.btn-3 {
+	font-size: 14px;
+	border: 1px solid var(--morado);
+	margin-top: 15px;
+}
+/* Fin Botones */
+/* Fin Estilos Generales */
+
+/* Seccion de Header -> Menu */
+.menu {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	z-index: 1000;
+}
+
+.logo {
+	font-size: 25px;
+	color: var(--morado);
+	text-transform: uppercase;
+	font-weight: 800;
+}
+
+.menu .navbar ul li {
+	position: relative;
+	float: left;
+}
+
+.menu .navbar ul li a {
+	font-size: 18px;
+	padding: 20px;
+	color: var(--blanco);
+	display: block;
+}
+
+.menu .navbar ul li a:hover {
+	color: var(--morado);
+}
+
+#menu {
+	display: none;
+}
+
+.menu-icono {
+	width: 25px;
+}
+
+.menu label {
+	cursor: pointer;
+	display: none;
+}
+
+/* Menu -> SubMenu */
+.submenu {
+	position: relative;
+}
+
+.submenu #carrito {
+	display: none;
+}
+
+.submenu:hover #carrito {
+	display: block;
+	position: absolute;
+	right: 0;
+	backdrop-filter: blur(10px);
+	top: 100%;
+	z-index: 1;
+	background-color: var(--grisTerciario);
+	padding: 20px;
+	min-width: 400px;
+}
+
+/* SubMenu -> Tabla */
+table {
+	width: 100%;
+}
+
+th,
+td {
+	color: var(--blanco);
+}
+
+.borrar {
+	background-color: var(--morado);
+	border-radius: 50%;
+	padding: 5px 10px;
+	text-decoration: none;
+	color: var(--blanco);
+	font-weight: 800;
+}
+
+/* Menu -> Contenido Header */
+.header-content {
+	padding: 200px 0 100px;
+}
+
+.header-info {
+	display: flex;
+}
+
+.header-txt {
+	width: 50%;
+}
+
+.header-txt h1 {
+	font-size: 50px;
+	color: var(--blanco);
+	text-transform: capitalize;
+}
+
+.header-img {
+	width: 50%;
+	text-align: right;
+}
+
+.header-img img {
+	width: 500px;
+}
+/* Fin Header */
+
+/* Seccion de Promociones */
+.promos {
+	padding: 50px 0;
+	text-align: center;
+}
+
+.promos h2 {
+	font-size: 50px;
+	color: var(--blanco);
+	margin-bottom: 35px;
+}
+
+/* Promociones -> categorias */
+.categories {
+	text-align: left;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+}
+.categorie {
+	display: flex;
+	align-items: center;
+	padding: 35px;
+}
+.categorie img {
+	width: 150px;
+}
+.categorie-1 {
+	width: 50%;
+}
+.categorie-1 h3 {
+	color: var(--blanco);
+	font-size: 22px;
+	font-weight: 600;
+}
+.categorie-1 p {
+	color: var(--grisSecundario);
+	font-size: 18px;
+}
+.categorie-img {
+	width: 50%;
+}
+/* Fin Seccion Promociones */
+
+/* Seccion Nuevos Productos */
+.products {
+	padding: 50px 0;
+}
+.products h2 {
+	font-size: 50px;
+	color: var(--blanco);
+	margin-bottom: 70px;
+}
+
+.product {
+	text-align: center;
+}
+.product img {
+	width: 150px;
+	margin-bottom: 15px;
+}
+.product-txt h3 {
+	font-size: 18px;
+	color: var(--blanco);
+	margin-bottom: 15px;
+}
+.product-txt p {
+	color: var(--grisSecundario);
+	font-size: 16px;
+	margin-bottom: 15px;
+}
+/* Fin Seccion Nuevos Productos */
+
+/* Footer */
+.footer {
+	display: flex;
+	padding: 30px 0;
+}
+.link {
+	width: 20%;
+}
+.link h3 {
+	color: var(--blanco);
+	margin-bottom: 20px;
+}
+.link a {
+	color: var(--grisSecundario);
+	font-size: 16px;
+	display: block;
+	margin-bottom: 10px;
+}
+.link p {
+	color: var(--grisSecundario);
+	font-size: 16px;
+}
+/* FinFooter */
+/* Fin DESKTOP FIRST */
