@@ -234,6 +234,7 @@ table {
 th,
 td {
 	color: var(--blanco);
+	padding: 0 8px;
 }
 /* Fin Tabla */
 
